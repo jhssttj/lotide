@@ -1,7 +1,3 @@
-const head = function(element){
-  return element[0];
-}
-
 const assertEqual = function(actual, expected) {
   let finalPass = ''
   if (actual === expected) {
@@ -12,6 +8,13 @@ const assertEqual = function(actual, expected) {
   return finalPass
 };
 
-console.log(assertEqual(head([5,6,7]), 2));
-console.log(assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello"));
+function eqArrays(array1, array2){
+  for (i = 0; i < array1.length; i ++){
+    if(array1[i] !== array2[i]){
+      return false;
+    }
+  }
+  return true;
+}
 
+console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
