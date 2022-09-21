@@ -27,3 +27,5 @@ const countLetters = function(string){
 
 //Test Case
 console.log(countLetters('lighthouse in the house'));
+assertEqual(countLetters('hih').h,2);
+

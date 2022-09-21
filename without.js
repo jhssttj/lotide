@@ -37,6 +37,6 @@ function without(source,itemsToRemove) {
 };
 
 //Test case
-(assertArraysEqual(without(['hello','world','light'],['light']), ["hello", "world"]));
+assertArraysEqual(without(['hello','world','light'],['light']), ["hello", "world"]);
 console.log(without([5,5,6,7,'hello','test','uo',5,6,4,3,7,3,'hello',3],[5,6,7,'hello']))
 console.log(without([1,2,3],[2,3]))
