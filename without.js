@@ -6,6 +6,7 @@ const assertArraysEqual = function(actual, expected) {
   } else {
     finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
   }
+  console.log(finalPass);
   return finalPass;
 };
 //The function below will compare each element in the two arrays and see if they are identical or not
@@ -36,7 +37,6 @@ function without(source,itemsToRemove) {
 };
 
 //Test case
-
-console.log(assertArraysEqual(without(['hello','world','light'],['light']), ["hello", "world"]));
+(assertArraysEqual(without(['hello','world','light'],['light']), ["hello", "world"]));
 console.log(without([5,5,6,7,'hello','test','uo',5,6,4,3,7,3,'hello',3],[5,6,7,'hello']))
 console.log(without([1,2,3],[2,3]))

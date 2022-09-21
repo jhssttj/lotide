@@ -6,9 +6,10 @@ const assertEqual = function(actual, expected) {
   } else {
     finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
   }
+  console.log(finalPass);
   return finalPass;
 };
 
 
-console.log(assertEqual("Lighthouse Labs", "Bootcamp"));
-console.log(assertEqual(1, 1));
+assertEqual("Lighthouse Labs", "Bootcamp");
+assertEqual(1, 1);

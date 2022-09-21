@@ -10,10 +10,11 @@ const assertEqual = function(actual, expected) {
   } else {
     finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
   }
+  console.log(finalPass);
   return finalPass;
 };
 
 //Test Case
-console.log(assertEqual(head([5,6,7]), 2));
-console.log(assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello"));
+assertEqual(head([5,6,7]), 2);
+assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
 

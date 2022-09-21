@@ -6,6 +6,7 @@ const assertEqual = function(actual, expected) {
   } else {
     finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
   }
+  console.log(finalPass);
   return finalPass;
 };
 

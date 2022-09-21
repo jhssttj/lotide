@@ -6,6 +6,7 @@ const assertArraysEqual = function(actual, expected) {
   } else {
     finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
   }
+  console.log(finalPass);
   return finalPass;
 };
 //The function below will compare each element in the two arrays and see if they are identical or not
@@ -37,7 +38,7 @@ const middle = function(array){
 }
 
 //Test Case
-console.log(assertArraysEqual(middle([1,3,5,7,9,11]),[5,7]))
+assertArraysEqual(middle([1,3,5,7,9,11]),[5,7])
 console.log(middle([1,2]))
 console.log(middle([1,2,3,4,5]))
 console.log(middle([1,2,3]))

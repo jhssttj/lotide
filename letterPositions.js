@@ -6,6 +6,7 @@ let finalPass = eqArrays(actual, expected);
   } else {
     finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
   }
+  console.log(finalPass);
   return finalPass;
 };
 
@@ -27,7 +28,7 @@ const letterPositions = function(sentence) {
   const results = {};
   let counter = 0;
   for (let letter of sentence) {
-    if (!results[letter]){
+    if (!results[letter]){ 
       results[letter] = [];
     }
     results[letter].push(counter);
@@ -37,6 +38,6 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-console.log(letterPositions('lighthouse in the house'))
-console.log(assertArraysEqual(letterPositions("hello").e, [1]));
-console.log(assertArraysEqual(letterPositions('lighthouse in the house').e, [9, 16, 22]));
+letterPositions('lighthouse in the house')
+assertArraysEqual(letterPositions("hello").e, [1]);
+assertArraysEqual(letterPositions('lighthouse in the house').e, [9, 16, 22]);

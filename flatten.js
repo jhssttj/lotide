@@ -6,6 +6,7 @@ const assertArraysEqual = function(actual, expected) {
   } else {
     finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
   }
+  console.log(finalPass);
   return finalPass;
 };
 //The function below will compare each element in the two arrays and see if they are identical or not
