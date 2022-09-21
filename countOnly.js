@@ -16,10 +16,10 @@ const countOnly = function(allItems, itemsToCount) {
   let finalObject = {};
   let itemsKey = Object.keys(itemsToCount);
 
-  for (let names in itemsToCount){
-    for (let givenNames of allItems){
-      if (givenNames === names && itemsToCount[names] === true){
-        if(!finalObject[names]){
+  for (let names in itemsToCount) {
+    for (let givenNames of allItems) {
+      if (givenNames === names && itemsToCount[names] === true) {
+        if(!finalObject[names]) {
           finalObject[names] = 0;
         }
         finalObject[names]++;
