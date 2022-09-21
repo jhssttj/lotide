@@ -1,15 +1,3 @@
-//This function will determine if the two input are identical and return true or false
-const assertEqual = function(actual, expected) {
-  let finalPass = '';
-  if (actual === expected) {
-    finalPass = (`😀😀😀Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
-  }
-  console.log(finalPass);
-  return finalPass;
-};
-
 //The function below will compare each element in the two arrays and see if they are identical or not
 function eqArrays(array1, array2) {
   for (let i = 0; i < array1.length; i ++) {
@@ -48,20 +36,20 @@ const eqObjects = function(object1, object2) {
   return true;
 }
 
-//TestCase
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-console.log(eqObjects(ab, ba)); // => true
+/*The function below will take two objects and print a message.
+The message printed to the console should be similar to that of assertArraysEqual. */
+const assertObjectsEqual = function(actual, expected) {
+  const inspect = require('util').inspect; 
+  if (eqObjects(actual,expected)) {
+    console.log(`😀😀😀Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`)
+  } else {
+    console.log(`🤬🤬🤬Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`)
+  }
+};
 
-const abc = { a: "1", b: "2", c: "3" };
-console.log(eqObjects(ab, abc)); // => false
-
+//Test Case
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
-console.log(eqObjects(cd, dc)); // => true
-
 const cd2 = { c: "1", d: ["2", 3, 4] };
-console.log(eqObjects(cd, cd2)); // => false
-
-assertEqual(eqObjects(cd,dc),true);
-assertEqual(eqObjects(cd2,dc),false);
+assertObjectsEqual(cd,dc);
+assertObjectsEqual(cd,cd2);
