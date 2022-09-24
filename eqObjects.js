@@ -27,6 +27,7 @@ function eqArrays(array1, array2) {
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 const eqObjects = (obj1, obj2) => {
+  let output = true;
   let mainObj = obj1;
   let subObj = obj2;
   if (Object.keys(obj1).length < Object.keys(obj2).length) {
@@ -35,16 +36,14 @@ const eqObjects = (obj1, obj2) => {
   }
   for (let key in mainObj){
     if (typeof(mainObj[key]) === 'object' && !Array.isArray(mainObj[key]) && typeof(subObj[key]) === 'object' && !Array.isArray(subObj[key])) {
-      return eqObjects(mainObj[key], subObj[key]);
-    }
-    if (typeof(mainObj[key]) === 'object' && Array.isArray(mainObj[key]) && typeof(subObj[key]) === 'object' && Array.isArray(subObj[key])) {
-      return eqArrays(mainObj[key], subObj[key]);
-    }
-    if (mainObj[key] !== subObj[key]) {
-      return false;
+      output = eqObjects(mainObj[key], subObj[key]);
+    }else if (typeof(mainObj[key]) === 'object' && Array.isArray(mainObj[key]) && typeof(subObj[key]) === 'object' && Array.isArray(subObj[key])) {
+      output = eqArrays(mainObj[key], subObj[key]);
+    }else if (mainObj[key] !== subObj[key]) {
+      output = false;
     }
   }
-  return true;
+  return output;
 };
 /*const eqObjects = function(object1, object2) {
   let objectKey = Object.keys;
