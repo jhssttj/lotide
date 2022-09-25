@@ -11,16 +11,17 @@ const assertArraysEqual = function(actual, expected) {
 };
 //The function below will compare each element in the two arrays and see if they are identical or not
 function eqArrays(array1, array2) {
-  for (let i = 0; i < array1.length; i++) {
-    if (array1.length !== array2.length) {
-      return false;
+  let output = true;
+  if (array1.length !== array2.length) return false;
+  array1.forEach((element,index) => {
+    if (Array.isArray(array1[index]) || Array.isArray(array2[index])) {
+      output = eqArrays(array1[index], array2[index]);
+    } else if (array1[index] !== array2[index]) {
+      output = false;
     }
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  return true;
+  }) 
+  return output;
 };
 
 //Test case
-assertArraysEqual([1,2,3],[1,2,3]);
+assertArraysEqual([1,2,3,[4,5,6,7,[8,[9]]]],[1,2,3,[4,5,6,7,[8,[9]]]]);
