@@ -1,27 +1,7 @@
-//The function below will determine if two arrays are equal and pass or fail if they are
-const assertArraysEqual = function(actual, expected) {
-  let finalPass = eqArrays(actual, expected);
-  if (finalPass) {
-    finalPass = (`😀😀😀Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
-  }
-  console.log(finalPass);
-  return finalPass;
-};
-//The function below will compare each element in the two arrays and see if they are identical or not
-function eqArrays(array1, array2) {
-  let output = true;
-  if (array1.length !== array2.length) return false;
-  array1.forEach((element,index) => {
-    if (Array.isArray(array1[index]) || Array.isArray(array2[index])) {
-      output = eqArrays(array1[index], array2[index]);
-    }else if (array1[index] !== array2[index]) {
-      output = false;
-    }
-  }) 
-  return output;
-};
+//Call in assertArraysEquals function
+const assertArraysEqual = require('./assertArraysEqual');
+//Call in eqArrays function
+const eqArrays = require('./eqArrays');
 
 //The function below will yield the middle portion of an array which varies depending on number of elements in the array.
 const middle = function(array){
@@ -39,9 +19,4 @@ const middle = function(array){
   return middleArr;
 }
 
-//Test Case
-assertArraysEqual(middle([1,3,5,7,9,11]),[5,7])
-console.log(middle([1,2]))
-console.log(middle([1,2,3,4,5]))
-console.log(middle([1,2,3]))
-console.log(middle([1,2,5,8,56,8,5,7,5,2]))
+module.exports = middle;
