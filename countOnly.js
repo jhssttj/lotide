@@ -30,7 +30,9 @@ const countOnly = function(allItems, itemsToCount) {
   return finalObject;
 }
 
-const firstNames = [
+module.exports = countOnly;
+
+/*const firstNames = [
   "Karl",
   "Salima",
   "Agouhanna",
@@ -41,7 +43,8 @@ const firstNames = [
   "Fang",
   "Joe"
 ];
-module.exports = countOnly;
+
+
 /*const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
