@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@jhssttj/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A library of basic functions",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/jhssttj/lotide.git"
   },
-  "author": "",
+  "author": "Kevin Lee",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jhssttj/lotide/issues"
