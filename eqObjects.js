@@ -1,28 +1,8 @@
-//This function will determine if the two input are identical and return true or false
-const assertEqual = function(actual, expected) {
-  let finalPass = '';
-  if (actual === expected) {
-    finalPass = (`😀😀😀Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
-  }
-  console.log(finalPass);
-  return finalPass;
-};
+//Call in assertEqual function
+const assertEqual = require('./assertEqual');
 
-//The function below will compare each element in the two arrays and see if they are identical or not
-function eqArrays(array1, array2) {
-  let output = true;
-  if (array1.length !== array2.length) return false;
-  array1.forEach((element,index) => {
-    if (Array.isArray(array1[index]) || Array.isArray(array2[index])) {
-      output = eqArrays(array1[index], array2[index]);
-    }else if (array1[index] !== array2[index]) {
-      output = false;
-    }
-  }) 
-  return output;
-};
+//Call in eqArrays function
+const eqArrays = require('./eqArrays');
 
 //The function below will take two objects and returns true or false based on a perfect match
 // Returns true if both objects have identical keys with identical values.

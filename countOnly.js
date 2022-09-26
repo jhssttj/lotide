@@ -1,15 +1,5 @@
-//This function will determine if the two input are identical and return true or false
-const assertEqual = function(actual, expected) {
-  let finalPass = '';
-  if (actual === expected) {
-    finalPass = (`😀😀😀Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
-  }
-  console.log(finalPass);
-  return finalPass;
-};
-
+//Call in assertEqual function
+const assertEqual = require('./assertEqual');
 
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
@@ -32,6 +22,7 @@ const countOnly = function(allItems, itemsToCount) {
 
 module.exports = countOnly;
 
+//Test Case
 /*const firstNames = [
   "Karl",
   "Salima",

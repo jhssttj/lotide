@@ -10,7 +10,7 @@ const assertArraysEqual = function(actual, expected) {
     finalPass = (`🤬🤬🤬Assertion Failed: ${actual} !== ${expected}`);
   }
   console.log(finalPass);
-  return finalPass;
+  return;
 };
 
 module.exports = assertArraysEqual;
