@@ -6,10 +6,10 @@ const map = function(array, callback) {
   return results;
 }
 
-const words = ["ground", "control", "to", "major", "tom"];
+/*const words = ["ground", "control", "to", "major", "tom"];
 
 const results1 = map(words, word => word[0]);
-console.log(results1);
+console.log(results1);*/
 
 //The function below will determine if two arrays are equal and pass or fail if they are
 const assertArraysEqual = function(actual, expected) {
@@ -35,5 +35,6 @@ function eqArrays(array1, array2) {
   return true;
 };
 
-//Test case
-assertArraysEqual(results1, ['g','c','t','m','t']);
+module.exports = map;
+/*//Test case
+assertArraysEqual(results1, ['g','c','t','m','t']);*/

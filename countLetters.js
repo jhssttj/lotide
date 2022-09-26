@@ -24,8 +24,10 @@ const countLetters = function(string){
   return finalObject;
 }
 
+module.exports = countLetters;
 
-//Test Case
+/*//Test Case
 console.log(countLetters('lighthouse in the house'));
-assertEqual(countLetters('hih').h,2);
+assertEqual(countLetters('hih').h,2);*/
+
 

@@ -27,7 +27,7 @@ function eqArrays(array1, array2) {
 //The function below will take two objects and returns true or false based on a perfect match
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
-const eqObjects = (obj1, obj2) => {
+const eqObjects = module.exports = function(obj1, obj2) {
   let output = true;
   let mainObj = obj1;
   let subObj = obj2;
@@ -48,7 +48,7 @@ const eqObjects = (obj1, obj2) => {
 };
 
 
-//TestCase
+/*/TestCase
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
 console.log(eqObjects(ab, ba)); // => true
@@ -72,4 +72,5 @@ const Test4 = {b:{c:2,d:2}, a:1};
 console.log(eqObjects(Test3, Test4)); // => true
 
 assertEqual(eqObjects(cd,dc),true);
-assertEqual(eqObjects(cd2,dc),false);
+assertEqual(eqObjects(cd2,dc),false);*/
+
