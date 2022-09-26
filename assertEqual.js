@@ -10,6 +10,4 @@ const assertEqual = function(actual, expected) {
   return finalPass;
 };
 
-//Test Case
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
+module.exports = assertEqual;
