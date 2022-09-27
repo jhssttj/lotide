@@ -9,7 +9,7 @@ assertEqual(1, 1);*/
 const assert = require('chai').assert;
 const assertEqual = require('../assertEqual');
 
-describe("#eqArrays", () => {
+describe("#AssertEquals", () => {
   it("return true for comparing 1 to 1", () => {
     assert.strictEqual(assertEqual(1, 1), `😀😀😀Assertion Passed: 1 === 1`);
   })
