@@ -1,6 +1,8 @@
 //Call in eqArrays function
 const eqArrays = require('./eqArrays');
 
+const branchtest = "I wrote this in a branch"
+
 //The function below will determine if two arrays are equal and pass or fail if they are
 const assertArraysEqual = function(actual, expected) {
   let finalPass = eqArrays(actual, expected);
@@ -17,3 +19,4 @@ module.exports = assertArraysEqual;
 
 /*Test case
 assertArraysEqual([1,2,3,[4,5,6,7,[8,[9]]]],[1,2,3,[4,5,6,7,[8,[9]]]]);*/
+
